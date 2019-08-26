@@ -34,7 +34,6 @@ import javafx.stage.Stage;
 public class ContactsApp extends Application {
     private static ArrayList<Contact> contacts;
     private static ObservableList<String> contactNames;
-    
     @Override
     public void start(Stage primaryStage) {
         ListView contactListView = new ListView();
@@ -83,8 +82,9 @@ public class ContactsApp extends Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        loadContacts(args[1]);
+        loadContacts(args[0]);
         launch(args);
+ 
     }
     
     public static void loadContacts(String filename) {
@@ -106,6 +106,8 @@ public class ContactsApp extends Application {
         }
         
         contactNames = FXCollections.observableArrayList(names);
+        
+        
     }
     
 }
